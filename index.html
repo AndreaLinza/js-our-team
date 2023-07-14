@@ -20,16 +20,49 @@
         <h1 class="text-center mb-4 lesson">Il nostro Fantastico Team</h1>
     </header>
 
-    <div class="container container-card text-center pb-4">
+    <div class="container">
+        <div class="container-card d-flex flex-wrap justify-content-around text-center pb-4 "></div>
 
-        <!-- <div class="card" style="width: 18rem;">
-            <img src="" class="card-img-top" alt="">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-            </div>
-        </div> -->
+        <div class="container">
+            <form class="row g-3">
+                <div class="col-md-4">
+                    <label for="inputFirstName" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="Mario">
+                </div>
+                <div class="col-md-4">
+                    <label for="inputLastName" class="form-label">Cognome</label>
+                    <input type="text" class="form-control" id="inputLastName" placeholder="Rossi">
+                </div>
+                <div class="col-4">
+                    <label for="inputAddress" class="form-label">Lavoro</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Coltivatore di banane">
+                </div>
+                
+                
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Età</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Scegli...</option>
+                        <option value="1"> 18 ~ 25 anni </option>
+                        <option value="2"> 26 ~ 35 anni</option>
+                        <option value="3"> </option>
+                    </select>
+                </div>
 
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Check me out
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary" id="btn-add">aggiungi</button>
+
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
