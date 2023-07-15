@@ -21,25 +21,32 @@
     </header>
 
     <div class="container">
-        <div class="container-card d-flex flex-wrap justify-content-around text-center pb-4 "></div>
+        <div class="container-card d-flex flex-wrap justify-content-around text-center pb-4 ">
 
-        <div class="container">
-            <form class="row g-3">
-                <div class="col-md-4">
+        </div>
+
+        <div class="container container-submit">
+            <form class="row flex-column g-3">
+
+                <div class="w-25 m-auto">
+                    <label for="formFile" class="form-label">Foto da inserire</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+                <div class="w-25 m-auto py-2">
                     <label for="inputFirstName" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="inputFirstName" placeholder="Mario">
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="Riccardo">
                 </div>
-                <div class="col-md-4">
+                <div class="w-25 m-auto py-2">
                     <label for="inputLastName" class="form-label">Cognome</label>
-                    <input type="text" class="form-control" id="inputLastName" placeholder="Rossi">
+                    <input type="text" class="form-control" id="inputLastName" placeholder="Carlucci">
                 </div>
-                <div class="col-4">
-                    <label for="inputAddress" class="form-label">Lavoro</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="Coltivatore di banane">
+                <div class="w-25 m-auto py-2">
+                    <label for="inputWork" class="form-label">Lavoro</label>
+                    <input type="text" class="form-control" id="inputWork" placeholder="Coltivatore di banane">
                 </div>
-                
-                
-                <div class="col-md-4">
+
+
+                <!-- <div class="col-md-4">
                     <label for="inputState" class="form-label">Età</label>
                     <select id="inputState" class="form-select">
                         <option selected>Scegli...</option>
@@ -47,17 +54,17 @@
                         <option value="2"> 26 ~ 35 anni</option>
                         <option value="3"> </option>
                     </select>
-                </div>
+                </div> -->
 
-                <div class="col-12">
+                <!-- <div class="col-12">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck">
                         <label class="form-check-label" for="gridCheck">
                             Check me out
                         </label>
                     </div>
-                </div>
-                <div class="col-12">
+                </div> -->
+                <div class="d-flex justify-content-center">
                     <button type="button" class="btn btn-primary" id="btn-add">aggiungi</button>
 
                 </div>
