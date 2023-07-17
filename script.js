@@ -2,20 +2,6 @@ const containerCard = document.querySelector(".container-card")
 const btnAdd = document.getElementById("btn-add")
 
 
-
-
-
-//const newMember = {}///////
-
-
-
-//console.log(memberTeam)
-//console.log(memberTeam.first_name)
-
-
-//console.log(memberTeam.first_name[0])
-
-
     
     const allMemberTeam =
     {
@@ -28,6 +14,7 @@ const btnAdd = document.getElementById("btn-add")
             work: "Founder & CEO",
             img: "wayne-barnett-founder-ceo.jpg"
         },
+
         // MEMBER 1
         {
             first_name: "Angela",
@@ -35,6 +22,7 @@ const btnAdd = document.getElementById("btn-add")
             work: "Chief Editor",
             img: "angela-caroll-chief-editor.jpg"
         },
+
         //MEMBER 2
         {
             first_name: "Walter",
@@ -42,6 +30,7 @@ const btnAdd = document.getElementById("btn-add")
             work: "Office Manager",
             img: "walter-gordon-office-manager.jpg"
         },
+
         //MEMBER 3
         {
             first_name: "Angela",
@@ -49,6 +38,7 @@ const btnAdd = document.getElementById("btn-add")
             work: "Social Media Manager",
             img: "angela-lopez-social-media-manager.jpg"
         },
+
         //MEMBER 4
         {
             first_name: "Scott",
@@ -56,6 +46,7 @@ const btnAdd = document.getElementById("btn-add")
             work: "Developer",
             img: "scott-estrada-developer.jpg"
         },
+
         //MEMBER 5
         {
             first_name: "Barbara",
@@ -95,12 +86,12 @@ const btnAdd = document.getElementById("btn-add")
     textWorkTeam.classList.add("card-text")
 
     // Creo le variabile che verranno appese dentro le card i vari nomi, cognomi e lavori dei membri
-    let inputNameText = `${allMemberTeam.myMember[key].first_name} ${allMemberTeam.myMember[key].last_name}`
-    let inputWorkText = `${allMemberTeam.myMember[key].work}`
+    let NameText = `${allMemberTeam.myMember[key].first_name} ${allMemberTeam.myMember[key].last_name}`
+    let WorkText = `${allMemberTeam.myMember[key].work}`
 
     // Appendo dentro 
-    textNameTeam.append(inputNameText)
-    textWorkTeam.append(inputWorkText)
+    textNameTeam.append(NameText)
+    textWorkTeam.append(WorkText)
 
     mainDiv.append(bodyCard)
     bodyCard.append(textNameTeam, textWorkTeam)
@@ -115,42 +106,56 @@ const btnAdd = document.getElementById("btn-add")
 
 btnAdd.addEventListener("click", function(){
 
-
+    //Creo la nuova main card
     const newMainDiv = document.createElement("div")
     newMainDiv.classList.add("card")
     newMainDiv.style.width = "30.3%"
     newMainDiv.style.margin = "1rem"
 
-    
+    //Creo l'immagine random
     let random = Math.floor(Math.random() * 100)
+    newMainDiv.innerHTML = `<img src="https://picsum.photos/350/350?random=${random}" alt="student"></img>`
 
-    
+    //Creo il corpo della nuova card
     const newBodyCard = document.createElement("div")
     newBodyCard.classList.add("card-body")
+
+    //Inserisco gli input del testo(nome, cognome, lavoro)
+    let InputFirstNameText = document.getElementById("inputFirstName").value
+    let InputLastNameText = document.getElementById("inputLastName").value
+    let InputWorkText = document.getElementById("inputWork").value
+
+    //Creo il nuovo paragrafo per inserire il nome e cognome
     const newTextNameTeam = document.createElement("p")
     newTextNameTeam.classList.add("card-text", "text-secondary", "fw-bold", "fst-italic", "fs-5", "mb-1")
+    newTextNameTeam.append(InputFirstNameText,InputLastNameText)
+    
+    //Creo il nuovo paragrafo dove inserire il lavoro
     const newTextWorkTeam = document.createElement("p")
     newTextWorkTeam.classList.add("card-text")
+    newTextWorkTeam.append(InputWorkText)
+    
+    //Appendo i vari elementi
     newMainDiv.append(newBodyCard)
     newBodyCard.append(newTextNameTeam, newTextWorkTeam)
     containerCard.append(newMainDiv)
     
+
+    //Creo anche l'oggetto newMember che andrà ad essere pushato nell'array AllMemberTeam
     const newMember = 
     {
-        newMemberTeam: [
-            {
-            first_name: document.getElementById('inputFirstName').value,
-            last_name: document.getElementById("inputLastName").value,
-            work: document.getElementById("inputWork").value,
-            img: `https://picsum.photos/350/350?random=${random}`,
-        }
-        ]
+        
+        first_name: document.getElementById('inputFirstName').value,
+        last_name: document.getElementById("inputLastName").value,
+        work: document.getElementById("inputWork").value,
+        img: `https://picsum.photos/350/350?random=${random}`,
+        
     }
     
-    allMemberTeam.myMember.push(newMember.newMemberTeam)
+    allMemberTeam.myMember.push(newMember)
     console.log(newMember)
     console.log(allMemberTeam.myMember)
-    return newMember
+    
     
 })
 
@@ -162,7 +167,6 @@ btnAdd.addEventListener("click", function(){
 //     newMainDiv.classList.add("card")
 //     newMainDiv.style.width = "30.3%"
 //     let random = Math.floor(Math.random() * 100)
-//     newMainDiv.innerHTML = `<img src="https://picsum.photos/350/350?random=${random}" alt="student"></img>`
     
 //     const newBodyCard = document.createElement("div")
 //     newBodyCard.classList.add("card-body")
